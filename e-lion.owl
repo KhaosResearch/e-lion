@@ -1,0 +1,1766 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontologies.khaos.uma.es/e-lion/"
+     xml:base="http://ontologies.khaos.uma.es/e-lion/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:e-lion="http://ontologies.khaos.uma.es/e-lion/">
+    <owl:Ontology rdf:about="http://ontologies.khaos.uma.es/e-lion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e-LION</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentAssetType -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentAssetType">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="https://w3id.org/xapi/ontology#ActivityType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/belongAssignment -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/belongAssignment">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the Assignment to which a submission belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belong Assignment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/belongsUser -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/belongsUser">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the user to which a submission belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belongs User</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseLanguage">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://schema.org/Language"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Language of course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course Language</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseSource -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseSource">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://schema.org/EducationalOrganization"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicate the source of course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course Source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentRegion -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentRegion">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://schema.org/State"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Identifies the geographic region, where the student lived while taking the course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">State</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/hasCourse -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/hasCourse">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the course to which an assignment belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Has Course</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/hasObjective -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/hasObjective">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://courseware.rkbexplorer.com/ontologies/courseware#course-objectives"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course has objective</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Has objective</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/hasRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/hasRequirement">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/Requirement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course has Requirement.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course has Requirement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/hasTargetAudience -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/hasTargetAudience">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://schema.org/EducationalAudience"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course has target audience</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Has target audience</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/inCourse -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/inCourse">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the course to which enrollment belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In Course</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/isEnrolled -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/isEnrolled">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the user to which enrollment belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Is Enrolled</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logOrigin">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/Origin"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This property indicates the origin of the layer of the client.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Log Origin</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/recordCourse -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/recordCourse">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the course to witch a log entry belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Record Course</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/recordUser -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/recordUser">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the user to which a log entry belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Record User</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/recordUserReal -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/recordUserReal">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the real user to which  a log entry belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Record User Real</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/recordUserRelated -->
+
+    <owl:ObjectProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/recordUserRelated">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the user related to which a log entry belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Record User Related</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentAllowSubmissionsFromDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentAllowSubmissionsFromDate">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If set, submissions will only be accepted after this date.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allow submissions from date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentAlwaysShowDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentAlwaysShowDescription">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If false the assignment intro will only be displayed after the allowsubmissionsfrom date. If true it will always be displayed.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Always show description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentAssetName -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentAssetName">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">asset name of assignment</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asset name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentAttemptReopenMethod -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentAttemptReopenMethod">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How to determine when students are allowed to open a new submission. Valid options are none, manual, untilpass.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attempt reopen method</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentBlindMarking -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentBlindMarking">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hide student/grader identities until the reveal identities action is performed</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blind marking</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentCompletionSubmit -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentCompletionSubmit">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If this field is set to 1, then the activity will be automatically marked as &apos;complete&apos; once the user submits their assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Completion submit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentCutoffDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentCutoffDate">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The final date after which submissions will no longer be accepted for this assignment without an extensions.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cutoff date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentDueDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentDueDate">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The due date for the assignment. Displayed to students.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Due date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentGrade -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentGrade">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The maximum grade for this assignment. Can be negative to indicate the use of a scale.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grade</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentId -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentId">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id of assignment generated by the system.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentIntro -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentIntro">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The description of the assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intro</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentIntroFormat -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentIntroFormat">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The format of the description field of the assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intro format</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentMarkingAllocation -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentMarkingAllocation">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If enabled, marking allocation features will be used in this assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marking allocation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentMarkingWorkflow -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentMarkingWorkflow">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If enabled, marking workflow features will be used in this assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marking workflow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentMaxAttempts -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentMaxAttempts">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicate the maximum number of student attempts allowed for this assignment. -1 means unlimited.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Max attempts</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentName -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentName">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The name of the instance of the assignment. Displayed at the top of each page.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentNoSubmissions -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentNoSubmissions">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates that the assignment does not require submissions by the students.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No submissions</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentRequireAllTeamMembersSubmit -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentRequireAllTeamMembersSubmit">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If enabled, a submission will not be accepted until all team members have submitted it.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Require all team members submit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentRequireSubmissionStatement -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentRequireSubmissionStatement">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Forces the student to accept a submission statement when submitting an assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Require submission statement</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentRevealIdenties -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentRevealIdenties">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Show identities for a blind marking assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reveal identies</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentSendLateNotifications -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentSendLateNotifications">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows separate enabling of notifications for late assignment submissions.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Send late notifications</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentSendNotifications -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentSendNotifications">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allows the disabling of email notifications in the assign module.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Send notifications</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentSendStudentNotifications -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentSendStudentNotifications">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Default for send student notifications checkbox when grading.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Send student notifications</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentSubmissionsDrafts -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentSubmissionsDrafts">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If true, assignment submissions will be considered drafts until the student clicks on the submit assignmnet button.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Submissions drafts</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentTeamSubmission -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentTeamSubmission">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicate that students submit in teams.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Team submission</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentTeamSubmissionsGroupingId -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentTeamSubmissionsGroupingId">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grouping id to get groups for team submissions.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Team submissions grouping id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentTimeModified -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentTimeModified">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The time the settings for this assign module instance were last modified.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time modified</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentType -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentType">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicate the type of assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/assignmentWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/assignmentWeight">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weight of the assessment in %. Typically, Exams are treated separately and have the weight 100%; the sum of all other assessments is 100%.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weight</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseClicksAVG -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseClicksAVG">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avarage number os click made by students in a course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avarage clicks</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseDescription">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Short description of course</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseFirstLevelCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseFirstLevelCategory">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">First level category of course</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Firtst level category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseId -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseId">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id of course generated by the system.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseNumberOfAssignments -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseNumberOfAssignments">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Total assignment of course</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Number of assignment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/coursePresentationLength -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/coursePresentationLength">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Length of the course in days.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Presentation length</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseSecondLevelCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseSecondLevelCategory">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Second level category of course</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Second level category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/courseUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/courseUrl">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL of the course</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course URL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/couseInstructionalLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/couseInstructionalLevel">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instructional level of course</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instructional level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentAgeBand -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentAgeBand">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Band of the student’s age</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Age band</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentDateRegistration -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentDateRegistration">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The date of student’s registration on the course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date registration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentDateUnregistration -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentDateUnregistration">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date of student unregistration from the course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date unregistration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentDisability -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentDisability">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates whether the student has declared a disability.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disability</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentFinalResult -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentFinalResult">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Student’s final result in the course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Final result</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentGender -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentGender">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The user’s gender.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gender</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentHighestEducation -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentHighestEducation">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Highest student education level on entry to the module presentation.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Highest education</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentImdBand -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentImdBand">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the Index of Multiple Deprivation band of the place where the user lived during the module-presentation.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IMD band</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentNumOfPrevAttempts -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentNumOfPrevAttempts">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The number times the student has attempted this course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Number of previus attempts</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentNumberOfClicks -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentNumberOfClicks">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Count of clicks made by one student in one course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Number of clicks</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentNumberOfSubmissions -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentNumberOfSubmissions">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Count of submissions made by one student in one course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Number of submissions</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentRating -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentRating">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quality rating given by the student</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quality rating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentRatingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentRatingDate">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date of quality rating</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date of rating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentRatingText -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentRatingText">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comment on the quality rating given by the student</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Text of rating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentRole -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentRole">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicate the role of user in the course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Role</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/enrollmentStudiedCredits -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/enrollmentStudiedCredits">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The total number of credits for the modules the student is currently studying.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Studied credits</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logAction -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logAction">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of action that triggered the event</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Action</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logAnonymous -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logAnonymous">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Is this action anonymous? Reports should ignore events with anonymous set to true.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anonymous</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logCrud -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logCrud">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This field contains a ‘c’ in case try to insert data, an &apos;r&apos; in case you try a reading, a ‘u’ if try to update and a ‘d’ in case it try a delete</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CRUD</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logEduLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logEduLevel">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bit that indicates the group to which the user who has fired the event its possible values ​​are: 1 for teachers, 2 for students and 0 for events that do not have educational relevance.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Educational level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logId -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logId">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id of log entry generated by the system.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logSumClick -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logSumClick">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The number of times a student interacts with the material in that day.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sum click</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logTimeCreated -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logTimeCreated">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time when the event was triggered.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time created</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logWeekFrom -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logWeekFrom">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The week from which the material is planned to be used.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Week from</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/logWeekTo -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/logWeekTo">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Log"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Week until which the material is planned to be used.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Week to</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/requirementValue -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/requirementValue">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Requirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement value.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submisionIsBanked -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submisionIsBanked">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A status flag indicating that the assessment result has been transferred from a previous submission.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Is banked</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submissionAttempNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submissionAttempNumber">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is used to record the number of attempts to submission.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attemp number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submissionGroupId -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submissionGroupId">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The identifier of the group to which the submission in the case of a submission group.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submissionId -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submissionId">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id of submission generated by the system.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submissionLatest -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submissionLatest">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It allows to quickly know if it is the last submission attempt made, since in this case the field contains the value true.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Latest</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submissionScore -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submissionScore">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The student’s score in this assessment. The range is from 0 to 100.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submissionStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submissionStatus">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">draft</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">new</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">submitted</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates the status of the submission, for example: draft, sent, etc.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submissionTimeCreated -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submissionTimeCreated">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The date of student submission.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time created</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/submissionTimeModified -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/submissionTimeModified">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Timestamp of the last modification that made the user.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time modified</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/typeOfUser -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/typeOfUser">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/Enrollment"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Looker</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Passive</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of user behavior in a course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of user</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/userBiography -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/userBiography">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Biography of user</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Biography</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/userId -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/userId">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id of user generated by the system.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/userJobTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/userJobTitle">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Job title of user</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Job title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/userProfileUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://ontologies.khaos.uma.es/e-lion/userProfileUrl">
+        <rdfs:domain rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Profile URL of user</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Profile URL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://courseware.rkbexplorer.com/ontologies/courseware#course-objectives -->
+
+    <owl:Class rdf:about="http://courseware.rkbexplorer.com/ontologies/courseware#course-objectives">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Objetives of course</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Objetive</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/Assignment -->
+
+    <owl:Class rdf:about="http://ontologies.khaos.uma.es/e-lion/Assignment">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the set of assignment that are part of the content of a course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assignment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/Course -->
+
+    <owl:Class rdf:about="http://ontologies.khaos.uma.es/e-lion/Course">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class model the set of courses that are present in the elearning management system.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Course</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/Enrollment -->
+
+    <owl:Class rdf:about="http://ontologies.khaos.uma.es/e-lion/Enrollment">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the content of a enrollment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enrollment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/Log -->
+
+    <owl:Class rdf:about="http://ontologies.khaos.uma.es/e-lion/Log">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the content of a log of user interaction.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Log</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/Origin -->
+
+    <owl:Class rdf:about="http://ontologies.khaos.uma.es/e-lion/Origin">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class indicates the origin of the layer of the client.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/Requirement -->
+
+    <owl:Class rdf:about="http://ontologies.khaos.uma.es/e-lion/Requirement">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement of course.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requirement of course</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/Submission -->
+
+    <owl:Class rdf:about="http://ontologies.khaos.uma.es/e-lion/Submission">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the set of submission that are made in a assignment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Submission</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ontologies.khaos.uma.es/e-lion/User -->
+
+    <owl:Class rdf:about="http://ontologies.khaos.uma.es/e-lion/User">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class model the set of users that are present in the elearning management system.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/EducationalAudience -->
+
+    <owl:Class rdf:about="http://schema.org/EducationalAudience">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Target Audience of course</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Target Audience</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/EducationalOrganization -->
+
+    <owl:Class rdf:about="http://schema.org/EducationalOrganization">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name of the academic institution to which a course belongs.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Educational Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Language -->
+
+    <owl:Class rdf:about="http://schema.org/Language">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Natural Language</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Language</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/State -->
+
+    <owl:Class rdf:about="http://schema.org/State">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A state or province of a country.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Person.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/xapi/ontology#ActivityType -->
+
+    <owl:Class rdf:about="https://w3id.org/xapi/ontology#ActivityType">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Class for an Activity Type.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ActivityType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/nclicks">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/avgclicks">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/per">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/rate">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/u">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/nsub">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/nassig">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/enrollmentNumberOfClicks"/>
+                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/nclicks"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/nclicks"/>
+                                            <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/avgclicks"/>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/enrollmentNumberOfSubmissions"/>
+                                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/nsub"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/courseClicksAVG"/>
+                                                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/c"/>
+                                                        <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/avgclicks"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/enrollmentRole"/>
+                                                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/r"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                                        <swrl:arguments>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first rdf:resource="http://ontologies.khaos.uma.es/e-lion/nsub"/>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </swrl:arguments>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                                                                <swrl:arguments>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first rdf:resource="http://ontologies.khaos.uma.es/e-lion/r"/>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Student</rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </swrl:arguments>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+                                                                                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/u"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/isEnrolled"/>
+                                                                                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/u"/>
+                                                                                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/inCourse"/>
+                                                                                                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                                                                                        <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/c"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/typeOfUser"/>
+                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Looker</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/Course"/>
+                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/enrollmentNumberOfClicks"/>
+                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/nclicks"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/nclicks"/>
+                                            <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/avgclicks"/>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+                                                <swrl:arguments>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:resource="http://ontologies.khaos.uma.es/e-lion/per"/>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:resource="http://ontologies.khaos.uma.es/e-lion/rate"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </swrl:arguments>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:resource="http://ontologies.khaos.uma.es/e-lion/rate"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/courseClicksAVG"/>
+                                                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/c"/>
+                                                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/avgclicks"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/User"/>
+                                                                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/u"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/enrollmentNumberOfSubmissions"/>
+                                                                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                                                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/nsub"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                                                                        <swrl:arguments>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first rdf:resource="http://ontologies.khaos.uma.es/e-lion/r"/>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Student</rdf:first>
+                                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </swrl:arguments>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/courseNumberOfAssignments"/>
+                                                                                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/c"/>
+                                                                                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/nassig"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#divide"/>
+                                                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                                                            <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/rate"/>
+                                                                                                            <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/nsub"/>
+                                                                                                            <rdf:Description rdf:about="http://ontologies.khaos.uma.es/e-lion/nassig"/>
+                                                                                                        </swrl:arguments>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                        <rdf:first>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/enrollmentRole"/>
+                                                                                                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                                                                                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/r"/>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                <rdf:first>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                                        <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/isEnrolled"/>
+                                                                                                                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/u"/>
+                                                                                                                        <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:first>
+                                                                                                                <rdf:rest>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                        <rdf:first>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                                                <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/inCourse"/>
+                                                                                                                                <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                                                                                                                                <swrl:argument2 rdf:resource="http://ontologies.khaos.uma.es/e-lion/c"/>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:first>
+                                                                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:rest>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontologies.khaos.uma.es/e-lion/typeOfUser"/>
+                        <swrl:argument1 rdf:resource="http://ontologies.khaos.uma.es/e-lion/e"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Passive</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
